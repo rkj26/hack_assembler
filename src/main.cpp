@@ -5,27 +5,12 @@
 #include "Parser.h"
 
 int main() {
-    std::ifstream inputFile("../test_no_symbols.asm");
-    std::ofstream outputFile("../test_no_symbols.hack");  // Output file
+    std::string input_filename = "../pong.asm";
+    std::string output_filename = "../pong.hack";
 
-    if (!inputFile.is_open()) {
-        std::cerr << "Error opening input file" << std::endl;
-    }
-
-    if (!outputFile.is_open()) {
-        std::cerr << "Error opening output file." << std::endl;
-        return 1;
-    }
-
-    Parser parser;
-    std::string line;
-
-    while (std::getline(inputFile, line)) {
-        if (line.empty() || line.rfind("//", 0) == 0) continue;
-        std::string binaryInstruction;
-        binaryInstruction = parser.translate(line);
-        outputFile << binaryInstruction << "\n";
-    }
+    Parser parser = Parser{input_filename, output_filename};
+    parser.read();
+    parser.build();
 
     return 0;
 }
