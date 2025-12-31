@@ -6,7 +6,8 @@ Aim of this project is to get used to:
 - Build the Assembler in a clean and organised manner
 
 How to run
-
+```
 > cmake ..
 > cmake --build .
 > ./HackAssembler
+```
