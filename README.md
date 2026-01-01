@@ -16,12 +16,12 @@ How to run it for the first time
 ```
 > mkdir build && cd build && cmake ../CMakeLists.txt
 > cmake --build .
-> ./HackAssembler
+> ./HackAssembler <filename.asm>
 ```
 
 Subsequent runs can be done as follows:
 ```
 > cd build && cmake ..
 > cmake --build .
-> ./HackAssembler
+> ./HackAssembler <filename.asm>
 ```
